@@ -1,0 +1,35 @@
+
+.user_inp{grid-area: user_inp;}
+.toggle{grid-area: toggle;}
+
+.text_area{
+    display: grid;
+    grid-template-areas: 'toggle user_inp user_inp user_inp';
+    grid-gap: 4vh;
+    margin-left: 6rem;
+}
+
+
+.text_area form{
+    display: flex;
+    flex-direction: column;
+}
+
+#toggle{
+    height: 2rem;
+    width: 4rem;
+    margin-left: auto;
+}
+
+.text_area form input{
+    position: relative;
+    width: 7rem;
+    margin-top: 2rem;
+    height: 2rem;
+}
+
+.text_area form textarea{
+    width: 73vh;
+    height: 70vh;
+    position: relative;
+}
