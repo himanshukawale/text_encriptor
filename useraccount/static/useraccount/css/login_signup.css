@@ -1,0 +1,29 @@
+
+nav span{
+    margin: auto;
+}
+
+.main form{
+    display: flex;
+    flex-direction: column;
+    width: 32vh;
+    height: 50vh;
+    justify-content: space-evenly;
+}
+
+.main form input{
+    height: 4vh;
+    font-size: 1.9vh;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #6a6aff;
+    color: #009d00;
+    outline: none;
+}
+
+.submit_btn{
+    border: none !important;
+    width: 50%;
+    align-self: center;
+    cursor: pointer;
+}

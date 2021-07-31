@@ -3,17 +3,29 @@
     padding: 0px;
 }
 
+body{
+    background-color: rgb(37, 37, 37);
+}
+
 nav{
     display: flex;
     align-items: center;
     justify-content: center;
     height: 12vh;
     position: relative;
+    margin: 2vh 1vh;
+    background-color: lightgrey;
 }
 
 nav span{
     margin-left: auto;
     font-size: 30px;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    margin-top: 14vh;
 }
 
 #user_verify{

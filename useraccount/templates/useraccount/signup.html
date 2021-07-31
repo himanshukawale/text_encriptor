@@ -1,14 +1,24 @@
 {% extends 'main/base.html' %}
 
+{% load static %}
+
+{% block style %}
+
+<link rel="stylesheet" href="{% static 'useraccount/css/login_signup.css' %}">
+
+{% endblock style %}
+
 {% block body %}
 
-<form action="" method="POST">
-    {% csrf_token %}
-    <input type="text" placeholder="Last Name" name="Last_Name">
-    <input type="text" placeholder="First Name" name="First_Name">
-    <input type="text" placeholder="Uasername" name="Username">
-    <input type="password" placeholder="Password" name="Password">
-    <input type="submit" placeholder="Submit">
-</form>
+<div class="main">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="text" placeholder="Last Name" name="Last_Name">
+        <input type="text" placeholder="First Name" name="First_Name">
+        <input type="text" placeholder="Uasername" name="Username">
+        <input type="password" placeholder="Password" name="Password">
+        <input type="submit" class="submit_btn" placeholder="Submit">
+    </form>
+</div>
 
 {% endblock body %}
