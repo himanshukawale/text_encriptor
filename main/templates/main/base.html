@@ -13,13 +13,36 @@
 <body>  
 
     <nav id="main_nav">
+        <div class="theme">
+            <input type="button" id="theme_btn" class="toggle" onclick = "theme_alt()" value="Dark mode">
+        </div>
         <span>Encriptor</span>
         {% block nav%}
         {% endblock nav%}
     </nav>
 
+    <div class="light" id="theme">
     {% block body %}
     {% endblock body %}
+    </div>
+
+    <script>
+        function theme_alt(){
+            let theme = document.getElementById("theme_btn").value;
+            console.log(theme)
+            if (theme == "Dark mode"){
+                document.getElementById("theme").className = "dark";
+                document.body.style.backgroundColor = "rgb(37, 37, 37)";
+                document.getElementById("theme_btn").value = "Light mode";
+            }
+            else{
+                document.getElementById("theme").className = "light";
+                document.body.style.backgroundColor = "#f3f2ef";
+                document.getElementById("theme_btn").value = "Dark mode";
+            }
+            
+        }
+    </script>
 
     {% block script %}
     {% endblock script %}

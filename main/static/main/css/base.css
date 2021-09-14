@@ -4,7 +4,7 @@
 }
 
 body{
-    background-color: rgb(37, 37, 37);
+    background-color: #f3f2ef;
 }
 
 nav{
@@ -18,6 +18,7 @@ nav{
 }
 
 nav span{
+    position: absolute;
     margin-left: auto;
     font-size: 30px;
 }
@@ -35,4 +36,20 @@ nav span{
     margin-right: 54px;
     margin-left: auto;
     font-size: 20px;
+}
+
+#main_nav .toggle{
+    margin-left: 10px;
+}
+
+.toggle{
+    height: 2rem;
+    width: 5rem;
+    margin-left: auto;
+    background-color: #0048ff;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    outline: none;
 }

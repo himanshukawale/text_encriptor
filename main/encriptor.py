@@ -1,5 +1,4 @@
 # This file contains all the python functions for the encriptor
-from os import environ as oe
 import environ
 
 from random import random, shuffle
@@ -10,7 +9,7 @@ environ.Env.read_env()
 
 MASTER_STRING_LIST = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J","K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ",", ".", "?", "!", "@", "#", "$", "%", "^", "*", "(", ")", "-", "_", "=", "+", "{", "}", "[", "]", ";", ":", "<", ">"]
 
-USER_INPUTS = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J","K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ",", ".", "?", " "]
+USER_INPUTS = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J","K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ",", ".", "?", " ", "\n"]
 
 used_combo_list_temp = []
 
@@ -80,7 +79,11 @@ def encript(inp, dictt):
             i_mod = i%10
         else:
             i_mod = i
-        out += dictt[inp[i]][i_mod]
+        try:
+            out += dictt[inp[i]][i_mod]
+        except:
+            out = f"SORRY '{inp[i]}' IS NOT ALLOWED AS A INPUT FOR ENCRIPTION"
+            break
         i += 1
     return out
 
@@ -103,8 +106,8 @@ def connect_db():
     db = mysql.connector.connect(
     port = "3307",
     host = "localhost",
-    user = oe['USER'],
-    passwd = oe['PASSWORD'],
+    user = env('USER'),
+    passwd = env('PASSWORD'),
     database = "textencriptor"
     )
     return db

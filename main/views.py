@@ -57,3 +57,6 @@ def decript_view(request):
 
     return render (request, 'main/index.html', {"out":out})
 
+
+def tutorial():
+    pass

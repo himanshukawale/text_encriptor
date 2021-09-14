@@ -6,5 +6,6 @@ from . import views
 urlpatterns = [
     path('', views.encript_view, name='home'),
     path('encript_view', views.encript_view, name='home'),
-    path('decript_view', views.decript_view, name='home')
+    path('decript_view', views.decript_view, name='home'),
+    path('tutorial', views.tutorial, name='tutorial')
 ]

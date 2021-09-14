@@ -27,3 +27,9 @@ nav span{
     align-self: center;
     cursor: pointer;
 }
+
+#main_nav .toggle{
+    position: fixed;
+    left: 20px;
+    top: 45px;
+}

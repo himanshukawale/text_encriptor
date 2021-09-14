@@ -9,8 +9,6 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-from os import environ as oe
-
 from pathlib import Path
 import environ
 
@@ -24,8 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'k#_y&g4u!!f9a%5p!2*4s94h@i@22nu&do#&-9)qp@vm9j4%e('
-SECRET_KEY = oe['SECRET_KEY']
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -84,8 +81,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'textencriptor',
-        'USER': oe['USER'],
-        'PASSWORD': oe['PASSWORD'],
+        'USER': env('USER'),
+        'PASSWORD': env('PASSWORD'),
         'HOST': 'localhost',
         'PORT': '3307'
     }
